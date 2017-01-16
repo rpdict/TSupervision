@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "icheck": "^1.0.2",
     "morris.js": "^0.5.0",
     "spinkit": "^1.2.5"
   }

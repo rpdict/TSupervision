@@ -9,14 +9,14 @@
 
     <title>特种设备智能监督平台</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="css/main.css" rel="stylesheet">
+    {{--<link rel="shortcut icon" href="favicon.ico">--}}
+    <link href="{{ asset("css/main.css") }}" rel="stylesheet">
 
 </head>
 
 <body class="gray-bg top-navigation">
 <div class="sign-in">
-    <a class="animated bounceInUp" href="login.html" title="登录">
+    <a class="animated bounceInUp" href="login" title="登录">
         <i class="fa fa-sign-in"></i>
     </a>
 </div>
@@ -616,7 +616,7 @@
         </div>
     </div>
 </div>
-<script src="js/vendor.js"></script>
+<script src="{{ asset("js/vendor.js") }}"></script>
 
 </body>
 
