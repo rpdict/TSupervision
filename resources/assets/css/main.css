@@ -1,0 +1,31 @@
+.nav-tabs>li>a {
+    margin-right: 0px;
+}
+
+.sign-in {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.sign-in a {
+    height: 38px;
+    width: 38px;
+    display: block;
+    background: #2f4050;
+    padding: 9px 8px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    opacity: .5;
+}
+
+.clients-list .tab-pane {
+    position: relative;
+    height: auto;
+}
+
+.sk-double-bounce .sk-child {
+    background-color: #1ab394;
+}
