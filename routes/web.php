@@ -15,11 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+//Route::match(['get', 'post'], '/login', function () {
+//    return view('auth.login');
+//});
+//
+//Route::match(['get', 'post'], '/register', function () {
+//    return view('auth.register');
+//});
 
-Route::get('/register', function () {
-    return view('auth.register');
+Route::get('example', function () {
+    return view('example');
 });
+Auth::routes();
 
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

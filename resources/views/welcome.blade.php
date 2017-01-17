@@ -3,11 +3,24 @@
 @section('title', '特种设备智能监督平台')
 
 @section('welcome')
-    <div class="sign-in">
-        <a class="animated bounceInUp" href="login" title="登录">
-            <i class="fa fa-sign-in"></i>
-        </a>
-    </div>
+    @if (Auth::guest())
+        <div class="sign-in">
+            <a class="animated bounceInUp" href="{{ url('/login') }}" title="登录">
+                <i class="fa fa-sign-in"></i>
+            </a>
+        </div>
+    @else
+        <div class="sign-in">
+            <a class="animated bounceInUp" href="{{ url('/logout') }}" title="登出"
+               onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                <i class="fa fa-sign-out"></i>
+            </a>
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </div>
+    @endif
     <div id="wrapper">
         <div id="page-wrapper" class="gray-bg">
             <div class="wrapper wrapper-content animated fadeIn">

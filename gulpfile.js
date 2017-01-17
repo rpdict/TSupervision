@@ -13,7 +13,7 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir(function(mix) {
+elixir( mix => {
     mix.sass('app.scss','./resources/assets/css');
 
     mix.styles([

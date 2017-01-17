@@ -3,7 +3,7 @@
 @section('title', '注册')
 
 @section('register')
-    <div class="middle-box text-center loginscreen   animated fadeInDown">
+    <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
             <div>
 
@@ -12,15 +12,34 @@
             </div>
             <h3>欢迎注册 H+</h3>
             <p>创建一个H+新账户</p>
-            <form class="m-t" role="form" action="http://www.zi-han.net/theme/hplus/login.html">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="请输入用户名" required="">
+            <form class="m-t" role="form" method="POST" action="{{ url('/register') }}">
+                {{ csrf_field() }}
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <input type="text" class="form-control" placeholder="请输入用户名" name="name" value="{{ old('name') }}" required autofocus>
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input type="email" class="form-control" placeholder="请输入邮箱" name="email" value="{{ old('email') }}" required>
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input type="password" class="form-control" placeholder="请输入密码" name="password" required>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="请输入密码" required="">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="请再次输入密码" required="">
+                    <input type="password" class="form-control" placeholder="请再次输入密码" name="password_confirmation" required>
                 </div>
                 <div class="form-group text-left">
                     <div class="checkbox i-checks">
