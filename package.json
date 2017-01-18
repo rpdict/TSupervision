@@ -16,6 +16,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "blueimp-gallery": "^2.22.0",
     "font-awesome": "^4.7.0",
     "icheck": "^1.0.2",
     "morris.js": "^0.5.0",

@@ -18,4 +18,5 @@ $(function() {
     setTimeout(function() {
         $(".sk-double-bounce").css("display", "none");
     }, 1000);
-})
+});
+

@@ -29,3 +29,22 @@
 .sk-double-bounce .sk-child {
     background-color: #1ab394;
 }
+
+.right-top-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.blueimp-gallery-carousel {
+    box-shadow: none;
+}
+
+.blueimp-gallery {
+    background: #ffffff;
+}
+
+.blueimp-gallery > .prev, .blueimp-gallery > .next {
+    background: #1ab394;
+}

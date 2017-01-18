@@ -22,6 +22,8 @@ elixir( mix => {
         './resources/assets/css/animate.min.css',
         './resources/assets/css/style.min.css',
         './node_modules/morris.js/morris.css',
+        './resources/assets/css/gooey.min.css',
+        './node_modules/blueimp-gallery/css/blueimp-gallery.css',
         './resources/assets/css/main.css'
     ], 'public/css/main.css');
 
@@ -33,6 +35,8 @@ elixir( mix => {
         './resources/assets/js/raphael-2.1.0.min.js',
         './resources/assets/js/morris-demo.min.js',
         './node_modules/icheck/icheck.js',
+        './resources/assets/js/gooey.min.js',
+        './node_modules/blueimp-gallery/js/blueimp-gallery.js',
         './resources/assets/js/main.js'
     ], 'public/js/vendor.js');
 });

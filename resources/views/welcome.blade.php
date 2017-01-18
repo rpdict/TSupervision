@@ -3,24 +3,49 @@
 @section('title', '特种设备智能监督平台')
 
 @section('welcome')
-    @if (Auth::guest())
-        <div class="sign-in">
-            <a class="animated bounceInUp" href="{{ url('/login') }}" title="登录">
-                <i class="fa fa-sign-in"></i>
-            </a>
-        </div>
-    @else
-        <div class="sign-in">
-            <a class="animated bounceInUp" href="{{ url('/logout') }}" title="登出"
-               onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                <i class="fa fa-sign-out"></i>
-            </a>
-            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </div>
-    @endif
+    <div class="right-top-menu">
+        <nav id="gooey-upper" style="width: 130px;height: 70px;">
+            <input type="checkbox" class="menu-open" name="menu-open1" id="menu-open1"/>
+
+            <label class="open-button" for="menu-open1">
+                <span class="burger burger-1"></span>
+                <span class="burger burger-2"></span>
+                <span class="burger burger-3"></span>
+            </label>
+            @if (Auth::guest())
+                <a href="{{ url('/login') }}" class="gooey-menu-item">
+                    <i title="登录" class="fa fa-sign-in"></i>
+                </a>
+            @else
+                <a href="#h-spaced-menu" class="gooey-menu-item">
+                    <i title="Horizontal Menu" class="fa fa-arrows-h"></i>
+                </a>
+                <a href="{{ url('/logout') }}" class="gooey-menu-item"
+                   onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <i title="登出" class="fa fa-sign-out"></i>
+                </a>
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endif
+            {{--<a href="#h-spaced-menu" class="gooey-menu-item">--}}
+                {{--<i title="Horizontal Menu" class="fa fa-arrows-h"></i>--}}
+            {{--</a>--}}
+            {{--<a href="#menu-v-example" class="gooey-menu-item">--}}
+                {{--<i title="Vertical Menu" class="fa fa-arrows-v"></i>--}}
+            {{--</a>--}}
+            {{--<a href="#docs" class="gooey-menu-item">--}}
+                {{--<i title="Docs" class="fa fa-book"></i>--}}
+            {{--</a>--}}
+            {{--<a href="#event-api" class="gooey-menu-item">--}}
+                {{--<i title="Event API" class="fa fa-code"></i>--}}
+            {{--</a>--}}
+            {{--<a href="#round" class="gooey-menu-item">--}}
+                {{--<i title="Round Menu" class="fa fa-circle"></i>--}}
+            {{--</a>--}}
+        </nav>
+    </div>
     <div id="wrapper">
         <div id="page-wrapper" class="gray-bg">
             <div class="wrapper wrapper-content animated fadeIn">
@@ -42,6 +67,31 @@
                                     <span class="badge badge-primary">友情链接</span>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{--<div class="ibox float-e-margins">--}}
+                                {{--<div class="ibox-content">--}}
+                                    <div id="links" style="display: none">
+                                        <a href="image/p_big1.jpg" title="Banana">
+                                            <img src="image/p1.jpg" alt="Banana">
+                                        </a>
+                                        <a href="image/p_big2.jpg" title="Apple">
+                                            <img src="image/p2.jpg" alt="Apple">
+                                        </a>
+                                        <a href="image/p_big3.jpg" title="Orange">
+                                            <img src="image/p3.jpg" alt="Orange">
+                                        </a>
+                                    </div>
+                                    <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+                                        <div class="slides"></div>
+                                        <a class="prev">‹</a>
+                                        <a class="next">›</a>
+                                        <a class="play-pause"></a>
+                                    </div>
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                     <div class="row">
@@ -617,4 +667,43 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(function() {
+            $("#gooey-upper").gooeymenu({
+
+                // 'horizontal', 'circle' or 'vertical'
+                style: "vertical",
+                size: 40,
+                margin: "small",
+                bgColor: "#1ab394",
+                contentColor: "white",
+                transitionStep: 100,
+                bounce: false,
+                bounceLength: "medium",
+                hover: "#179e83",
+                circle: {
+                    radius: 50
+                },
+                horizontal: {
+                    menuItemPosition: "glue"
+                },
+                vertical: {
+                    menuItemPosition: "glue",
+                    direction: "down"
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            blueimp.Gallery(
+                    document.getElementById('links').getElementsByTagName('a'),
+                    {
+                        container: '#blueimp-image-carousel',
+                        carousel: true
+                    }
+            );
+        });
+    </script>
 @endsection
