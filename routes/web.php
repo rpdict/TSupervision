@@ -30,6 +30,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/test', function () {
-    return view('test');
+//Route::get('/test', function () {
+//    return view('test');
+//});
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/admin', function () {
+        return view('admin.index');
+    });
 });

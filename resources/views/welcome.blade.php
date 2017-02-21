@@ -17,8 +17,8 @@
                     <i title="登录" class="fa fa-sign-in"></i>
                 </a>
             @else
-                <a href="#h-spaced-menu" class="gooey-menu-item">
-                    <i title="Horizontal Menu" class="fa fa-arrows-h"></i>
+                <a href="{{ url('/admin') }}" class="gooey-menu-item">
+                    <i title="Horizontal Menu" class="fa fa-gears"></i>
                 </a>
                 <a href="{{ url('/logout') }}" class="gooey-menu-item"
                    onclick="event.preventDefault();
